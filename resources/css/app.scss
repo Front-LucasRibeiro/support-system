@@ -1,0 +1,36 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+}
+
+.nav-menu {
+  @media (max-width: 480px) {
+    flex-direction: column;
+
+    .navbar-brand {
+      margin: 0;
+    }
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .nav-item {
+      padding: 0 12px;
+
+      &:hover {
+        font-weight: 600;
+      }
+    }
+  }
+}
