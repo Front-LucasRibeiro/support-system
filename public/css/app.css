@@ -11965,11 +11965,22 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.form-create {
+  margin-bottom: 45px;
+}
+.form-create textarea {
+  height: 350px;
+}
+.form-create .btn {
+  display: block;
+  width: 220px;
+  margin: 0 auto;
+}
+
 body {
   display: grid;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
-  overflow: hidden;
 }
 
 @media (max-width: 480px) {
@@ -11992,6 +12003,11 @@ body {
 }
 .nav-menu .navbar-nav .nav-item {
   padding: 0 12px;
+}
+@media (max-width: 480px) {
+  .nav-menu .navbar-nav .nav-item {
+    padding: 0;
+  }
 }
 .nav-menu .navbar-nav .nav-item:hover {
   font-weight: 600;

@@ -1,22 +1,28 @@
 {
-    "private": true,
-    "scripts": {
-        "vite": "vite",
-        "build": "vite build",
-        "dev": "mix watch"
-    },
-    "devDependencies": {
-        "axios": "^1.1.2",
-        "laravel-mix": "^6.0.49",
-        "laravel-vite-plugin": "^0.7.2",
-        "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
-        "resolve-url-loader": "^5.0.0",
-        "sass": "^1.77.2",
-        "sass-loader": "^12.1.0",
-        "vite": "^4.0.0"
-    },
-    "dependencies": {
-        "bootstrap": "^5.3.3"
-    }
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run frontend\" \"npm run serve\"",
+    "frontend": "mix watch",
+    "serve": "php artisan serve",
+    "vite": "vite",
+    "database": "php artisan migrate",
+    "frontend-prod": "mix --production",
+    "backend": "php artisan config:cache && php artisan route:cache && php artisan view:cache",
+    "build": "npm run frontend-prod && npm run backend"
+  },
+  "devDependencies": {
+    "axios": "^1.1.2",
+    "concurrently": "^8.2.2",
+    "laravel-mix": "^6.0.49",
+    "laravel-vite-plugin": "^0.7.2",
+    "lodash": "^4.17.19",
+    "postcss": "^8.1.14",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.77.2",
+    "sass-loader": "^12.1.0",
+    "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
 }
