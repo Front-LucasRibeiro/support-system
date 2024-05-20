@@ -1,0 +1,48 @@
+.details {
+  border: 1px solid #ddd;
+  padding: 14px;
+  border-radius: 6px;
+
+  .attachments{
+    font-size: 19px;
+  }
+
+  .title-called{
+    .id{
+      font-weight: bold;
+    }
+  }
+
+  iframe,
+  img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+  }
+
+  .gallery {
+    @media (max-width: 480px) {
+      width: 100vw;
+      overflow: auto;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      padding: 0;
+      margin: 14px 0 24px;
+
+      @media (max-width: 480px) {
+        overflow: auto;
+        flex-wrap: nowrap;
+      }
+
+      li {
+        border: 1px solid #ddd;
+        border-radius: 7px;
+      }
+    }
+  }
+}

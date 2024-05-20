@@ -29,11 +29,10 @@
 
 
 
-  <div class="container mt-5 content">
+  <section class="container mt-5 content">
     <h2 class="mb-4">{{ $title }}</h2>
-
     {{ $slot }}
-  </div>
+  </section>
 
   <footer class="footer bg-dark py-3 px-4">
     <p class="text-light text-center m-0">

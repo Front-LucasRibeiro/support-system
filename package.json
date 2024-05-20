@@ -3,7 +3,7 @@
   "scripts": {
     "start": "concurrently \"npm run frontend\" \"npm run serve\"",
     "frontend": "mix watch",
-    "serve": "php artisan serve",
+    "serve": "php artisan route:cache && php artisan serve",
     "vite": "vite",
     "database": "php artisan migrate",
     "frontend-prod": "mix --production",

@@ -11977,6 +11977,65 @@ textarea.form-control-lg {
   margin: 0 auto;
 }
 
+.list-called .list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.list-called .list-group-item .id {
+  font-weight: bold;
+  margin-right: 8px;
+}
+.list-called .list-group-item .status {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 5px;
+}
+
+.details {
+  border: 1px solid #ddd;
+  padding: 14px;
+  border-radius: 6px;
+}
+.details .attachments {
+  font-size: 19px;
+}
+.details .title-called .id {
+  font-weight: bold;
+}
+.details iframe,
+.details img {
+  width: 280px;
+  height: 280px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 480px) {
+  .details .gallery {
+    width: 100vw;
+    overflow: auto;
+  }
+}
+.details .gallery ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  padding: 0;
+  margin: 14px 0 24px;
+}
+@media (max-width: 480px) {
+  .details .gallery ul {
+    overflow: auto;
+    flex-wrap: nowrap;
+  }
+}
+.details .gallery ul li {
+  border: 1px solid #ddd;
+  border-radius: 7px;
+}
+
 body {
   display: grid;
   min-height: 100vh;
