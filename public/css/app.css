@@ -11983,6 +11983,9 @@ textarea.form-control-lg {
   align-items: center;
   cursor: pointer;
 }
+.list-called .list-group-item:hover {
+  background-color: #ddd;
+}
 .list-called .list-group-item .id {
   font-weight: bold;
   margin-right: 8px;

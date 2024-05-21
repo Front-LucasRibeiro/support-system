@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CalledController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmailController;
 
 
 Route::get('/chamados', [CalledController::class, 'index']);

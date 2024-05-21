@@ -1,8 +1,10 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Mail\CalledsCreatedMail;
 use App\Models\Called;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CalledController extends Controller {
 
@@ -32,14 +34,17 @@ class CalledController extends Controller {
     $called->description = $description;
     $called->status = $status;
 
+    $attachmentPaths = [];
+    
     if ($request->hasFile('attachments')) {
-      $attachmentPaths = [];
       foreach ($request->file('attachments') as $file) {
         $path = $file->store('attachments', 'public');
-        $attachmentPaths[] = $path;
+        $attachmentPaths[] = $path; 
       }
-      $called->attachments = json_encode($attachmentPaths);
+      $called->attachments = json_encode($attachmentPaths); 
     }
+
+    Mail::to('lksribeiro2014@gmail.com')->send(new CalledsCreatedMail($title, $description, $attachmentPaths));
 
     $called->save();
 
