@@ -18,4 +18,5 @@
 
 # About
   - customer support system
-  - Users with the @collaborator.com domain will have the employee profile, the other users will be from the client profile.
+  - Users with the @collaborator.com domain will have the employee profile, the other users will be from the client profile. ex: joao@collaborator.com
+  - Test CPF of users in a development environment: https://www.4devs.com.br/gerador_de_cpf 

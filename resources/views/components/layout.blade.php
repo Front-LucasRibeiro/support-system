@@ -19,9 +19,11 @@
         <li class="nav-item active">
           <a class="nav-link" href="/chamados">Chamados</a>
         </li>
+        @if (Auth::check() && Auth::user()->user_type === 'Cliente')
         <li class="nav-item">
           <a class="nav-link" href="/chamados/criar">Criar</a>
         </li>
+        @endif
         <li class="nav-item">
           <a class="nav-link" href="{{ route('logout') }}">Sair</a>
         </li>

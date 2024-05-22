@@ -15,6 +15,7 @@ Route::controller(CalledController::class)->group(function () {
   Route::get('/chamados', 'index')->middleware(Auth::class);
   Route::get('/chamados/criar', 'create')->middleware(Auth::class);
   Route::post('/chamados/salvar', 'store')->middleware(Auth::class);
+  Route::post('/chamados/atualizar', 'update')->middleware(Auth::class);
   Route::get('/chamados/{id}', 'show')->name('calleds.show')->middleware(Auth::class);
 });
 

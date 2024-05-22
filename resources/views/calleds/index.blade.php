@@ -15,7 +15,7 @@
         <span class="id">#{{ $called->id }}</span>
         {{ $called->title }}
       </div>
-      <span class="status text-white bg-success">{{ $called->status }}</span>
+      <span class="status text-white @if($called->status === 'Aberto') bg-success @elseif($called->status === 'Em atendimento') bg-warning @elseif($called->status === 'Finalizado') bg-secondary @endif">{{ $called->status }}</span>
     </li>
     @endforeach
     @else
