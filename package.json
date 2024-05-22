@@ -5,6 +5,8 @@
     "frontend": "mix watch",
     "serve": "php artisan route:cache && php artisan serve",
     "vite": "vite",
+    "init": "concurrently \"npm run key\" \"npm run database\"",
+    "key": "php artisan key:generate",
     "database": "php artisan migrate",
     "frontend-prod": "mix --production",
     "backend": "php artisan config:cache && php artisan route:cache && php artisan view:cache",

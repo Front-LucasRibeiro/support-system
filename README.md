@@ -8,7 +8,8 @@
 
 ## Initial settings
  - Make sure you have the same settings in your php.ini file
- - npm run database (create database - settings data on .env file)
+ - SMTP data set up to send email
+ - npm run init: (create database mysql - settings data on .env file), (generate app key) 
 
 ## Compile Project for Development
  - npm start (compiles front-end resources and start app server in http://127.0.0.1:8000)

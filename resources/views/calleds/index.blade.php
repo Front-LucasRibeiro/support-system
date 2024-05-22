@@ -1,6 +1,16 @@
 <!-- view com a listagem de chamados  -->
 <x-layout title="Chamados">
 
+  <form action="/chamados" method="GET" class="form-search">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Buscar chamados por id ou título..." name="search" value="{{ request('search') }}">
+      <button class="btn btn-outline-secondary" type="submit" name="action" value="search">Buscar</button>
+      <button class="btn btn-secondary" type="submit" name="action" value="clear">Limpar Busca</button>
+    </div>
+  </form>
+
+
+
   @isset($messageSuccess)
   <div class="alert alert-success">
     {{ $messageSuccess }}

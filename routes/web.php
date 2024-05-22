@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CalledController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\NotFoundController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Auth;
@@ -26,4 +27,8 @@ Route::controller((LoginController::class))->group(function () {
 });
 
 Route::get('/cadastrar', [RegisterController::class, 'index']);
-Route::post('/cadastrar', [RegisterController::class, 'store']);
+Route::post('/cadastrar', [RegisterController::class, 'store']); 
+
+Route::get('', [NotFoundController::class, 'index']); 
+
+

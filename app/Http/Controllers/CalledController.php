@@ -15,19 +15,35 @@ class CalledController extends Controller
   public function index(Request $request)
   {
     $userId = Auth::id();
-    $calleds = Called::where('user_id', $userId)
-      ->orderBy('created_at', 'desc')
-      ->get();
+    $query = Called::query();
 
     if (Auth::user()->user_type === 'Colaborador') {
-      $calleds = Called::query()->orderBy('created_at', 'desc')->get();
+      $query->orderBy('created_at', 'desc');
+    } else {
+      $query->where('user_id', $userId)->orderBy('created_at', 'desc');
     }
+
+    if ($request->input('action') === 'search' && $request->filled('search')) {
+      $search = $request->input('search');
+      $query->where(function ($q) use ($search) {
+        $q->where('title', 'like', "%{$search}%")
+        ->orWhere('id', 'like', "%{$search}%");
+      });
+    }
+
+    if ($request->input('action') === 'clear') {
+      return redirect('/chamados');
+    }
+
+    $calleds = $query->get();
 
     $messageSuccess = $request->session()->get('message.success');
     $request->session()->forget('message.success');
 
-    return view('calleds.index')->with('calleds', $calleds)->with('messageSuccess', $messageSuccess);
+    return view('calleds.index', compact('calleds', 'messageSuccess'));
   }
+
+
 
   public function create()
   {

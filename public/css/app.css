@@ -11996,6 +11996,10 @@ textarea.form-control-lg {
   border-radius: 5px;
 }
 
+.form-search input:focus {
+  box-shadow: none;
+}
+
 .details {
   border: 1px solid #ddd;
   padding: 14px;
@@ -12084,6 +12088,38 @@ textarea.form-control-lg {
 }
 .form-login button {
   width: 100%;
+}
+
+.notFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 22px 14px;
+  height: 100%;
+}
+.notFound__text {
+  text-align: center;
+}
+.notFound__error {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 12.5rem;
+  font-weight: 800;
+  margin-bottom: 1.875rem;
+  color: #111;
+}
+@media (max-width: 520px) {
+  .notFound__error {
+    font-size: 7.5rem;
+  }
+}
+.notFound__error span {
+  color: #bbb;
 }
 
 body {
