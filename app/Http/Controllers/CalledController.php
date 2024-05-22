@@ -8,9 +8,13 @@ use Illuminate\Support\Facades\Mail;
 
 class CalledController extends Controller {
 
-  public function index(){
-    $calleds = Called::query()->orderBy('title')->get();
-    return view('calleds.index')-> with('calleds', $calleds);
+  public function index(Request $request){
+    $calleds = Called::query()->orderBy('created_at', 'desc')->get();
+
+    $messageSuccess = $request->session()->get('message.success');
+    $request->session()->forget('message.success');
+
+    return view('calleds.index')-> with('calleds', $calleds)->with('messageSuccess', $messageSuccess);
   }
 
   public function create(){
@@ -48,7 +52,7 @@ class CalledController extends Controller {
 
     $called->save();
 
-    return redirect('/chamados')->with('status', 'success');
+    return redirect('/chamados')->with('status', 'success')->with('message.success', 'Chamado criado com sucesso.');
   }
 
   public function show($id)

@@ -5,13 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
-  <title>{{ $title }}</title>
+  <title>Support System - {{ $title }}</title>
 </head>
 
 <body>
   <header class="header">
     <nav class="nav-menu navbar navbar-light bg-light px-4 d-flex justify-content-between">
-      <h1 class="navbar-brand" href="#">Support System</h1>
+      <a href="/chamados">
+        <h1 class="navbar-brand" href="#">Support System</h1>
+      </a>
 
       <ul class="navbar-nav">
         <li class="nav-item active">
@@ -21,7 +23,7 @@
           <a class="nav-link" href="/chamados/criar">Criar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/login">Sair</a>
+          <a class="nav-link" href="{{ route('logout') }}">Sair</a>
         </li>
       </ul>
     </nav>

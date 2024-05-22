@@ -40,4 +40,25 @@
       @endif
     </div>
   </div>
+  <div class="response">
+    <form action="/chamados/salvar" method="post" class="form-create" enctype="multipart/form-data">
+      @csrf
+
+      <div class="mb-3 mt-2">
+        <textarea type="text" id="message" name="message" class="form-control" placeholder="Mensagem..." required></textarea>
+      </div>
+
+      <div class="mb-5 actions">
+        <div>
+          <label for="attachments" class="form-label">Anexos:</label>
+          <input type="file" id="attachments" name="attachments[]" class="form-control" multiple />
+        </div>
+
+        <div class="btn-actions">
+          <button type="submit" class="btn btn-dark">Finalizar</button>
+          <button type="submit" class="btn btn-dark">Enviar</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </x-layout>

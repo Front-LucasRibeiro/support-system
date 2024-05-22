@@ -12039,6 +12039,53 @@ textarea.form-control-lg {
   border-radius: 7px;
 }
 
+.response textarea {
+  height: 152px;
+}
+.response .actions {
+  display: flex;
+  justify-content: space-between;
+}
+.response .btn-actions {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+}
+
+.overlay {
+  background-color: #212529;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.form-login {
+  max-width: 310px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 26px 24px;
+  border-radius: 6px;
+  width: 100%;
+}
+.form-login .list-erros {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0;
+  text-align: center;
+}
+.form-login .info {
+  margin-top: 22px;
+}
+.form-login button {
+  width: 100%;
+}
+
 body {
   display: grid;
   min-height: 100vh;
@@ -12052,6 +12099,9 @@ body {
   .nav-menu .navbar-brand {
     margin: 0;
   }
+}
+.nav-menu a {
+  text-decoration: none;
 }
 .nav-menu .navbar-nav {
   display: flex;

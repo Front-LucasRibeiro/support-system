@@ -1,12 +1,28 @@
 <?php
 
 use App\Http\Controllers\CalledController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EmailController;
+use App\Http\Middleware\Auth;
+
+Route::get('/', function () {
+  return redirect(('/chamados'));
+})->middleware(Auth::class);
 
 
-Route::get('/chamados', [CalledController::class, 'index']);
-Route::get('/chamados/criar', [CalledController::class, 'create']);
-Route::post('/chamados/salvar', [CalledController::class, 'store']);
-Route::get('/chamados/{id}', [CalledController::class, 'show'])->name('calleds.show');
+Route::controller(CalledController::class)->group(function () {
+  Route::get('/chamados', 'index')->middleware(Auth::class);
+  Route::get('/chamados/criar', 'create')->middleware(Auth::class);
+  Route::post('/chamados/salvar', 'store')->middleware(Auth::class);
+  Route::get('/chamados/{id}', 'show')->name('calleds.show')->middleware(Auth::class);
+});
 
+Route::controller((LoginController::class))->group(function () {
+  Route::get('/login', 'index')->name('login');
+  Route::post('/login', 'store');
+  Route::get('/logout', 'destroy')->name('logout');
+});
+
+Route::get('/cadastrar', [RegisterController::class, 'index']);
+Route::post('/cadastrar', [RegisterController::class, 'store']);

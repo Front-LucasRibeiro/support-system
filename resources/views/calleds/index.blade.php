@@ -1,7 +1,14 @@
 <!-- view com a listagem de chamados  -->
 <x-layout title="Chamados">
+
+  @isset($messageSuccess)
+  <div class="alert alert-success">
+    {{ $messageSuccess }}
+  </div>
+  @endisset
+
   <ul class="list-group list-called">
-    @if (count($calleds) > 0)
+    @if (count($calleds ?? []) > 0)
     @foreach ($calleds as $called)
     <li class="list-group-item" data-id="{{ $called->id }}">
       <div class="info">
