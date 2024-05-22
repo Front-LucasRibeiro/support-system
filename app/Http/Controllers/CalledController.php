@@ -44,7 +44,6 @@ class CalledController extends Controller
   }
 
 
-
   public function create()
   {
     return view('calleds.create');

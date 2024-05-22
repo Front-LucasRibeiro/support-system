@@ -9,8 +9,6 @@
     </div>
   </form>
 
-
-
   @isset($messageSuccess)
   <div class="alert alert-success">
     {{ $messageSuccess }}
